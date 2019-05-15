@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Workbox PWA</title>
@@ -7,10 +8,30 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3f51b5">
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-<link rel="stylesheet" href="styles.61981e6f805f82d49920.css"></head>
+  <link rel="stylesheet" href="styles.61981e6f805f82d49920.css">
+</head>
+
 <body>
   <app-navigation></app-navigation>
-<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="polyfills.0fa3e9588b07b25d43c2.js"></script><script type="text/javascript" src="main.97a3068a07010b8662e7.js"></script></body>
+  <script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script>
+  <script type="text/javascript" src="polyfills.0fa3e9588b07b25d43c2.js"></script>
+  <script type="text/javascript" src="main.97a3068a07010b8662e7.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      })
+    }
+  </script>
+  <!--Add Meta tags on the fly if needed Can be risks-->
+  <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
+    integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
